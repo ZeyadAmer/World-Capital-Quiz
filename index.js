@@ -1,12 +1,13 @@
-import express from "express";
-import bodyParser from "body-parser";
-import pg from "pg";
-
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("public"));
+const express = require("express");
+const bodyParser = require("body-parser");
+const pg = require("pg");
+require("dotenv").config();
 
 const app = express();
 const port = 3000;
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static("public"));
 
 let quiz = [];
 
